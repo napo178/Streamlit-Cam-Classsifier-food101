@@ -38,8 +38,8 @@ def class_names_list(filename):
     class_names = file.split("\n")
     return class_names
 
-model =  load_model_h5("/models/model.h5")
-class_names = class_names_list("/models/class_names.txt")
+model =  load_model_h5("./models/model.h5")
+class_names = class_names_list("./models/class_names.txt")
 
 
 def main():
