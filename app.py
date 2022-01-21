@@ -5,8 +5,9 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 
-def load_prep_image(filename, img_shape =224):
-    img = tf.io.read_file(filename)
+def load_prep_image(img,  img_shape =224):
+    #img = tf.io.read_file(filename)
+    img = tf.io.encode_jpeg(img)
     img = tf.image.decode_image(img, channels = 3)
     img = tf.image.resize(img, size = [img_shape,img_shape])
     img = img/255.
@@ -67,8 +68,9 @@ def main():
 
     if st.button(label = "Classify"):
         data = Image.open(data)
-        data.save("data.jpg")
-        img = load_prep_image("data.jpg")
+        #data.save("data.jpg")
+        #img = load_prep_image("data.jpg")
+        img = load_prep_image(img = data)
         pred_and_plot(model = model, img = img, class_names = class_names)
 
 
