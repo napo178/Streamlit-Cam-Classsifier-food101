@@ -7,6 +7,8 @@ from matplotlib import pyplot as plt
 
 st.title('RAVN APP proof of concept image recognition')
 
+st.title ('Machine Learning')
+
 def load_prep_image(img,  img_shape =224):
     #img = tf.io.read_file(filename)
     img = tf.io.encode_jpeg(img)
